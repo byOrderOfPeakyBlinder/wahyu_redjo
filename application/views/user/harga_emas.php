@@ -42,7 +42,7 @@ function tgl_indo($tanggal){
                         <!-- <br> -->
                         <h1><b> Harga Beli</b></h1>
                         <h1 style="color:orange; font-size: 64px;">Rp. <?= number_format($harga['beli_6'],0)?></h1>
-                        
+
                         <h1><b> Harga Jual</b></h1>
                         <h1 style="color:orange; font-size: 64px;">Rp. <?= number_format($harga['jual_6'],0)?></h1>
                         <br>

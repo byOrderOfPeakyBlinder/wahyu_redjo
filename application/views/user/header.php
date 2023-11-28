@@ -26,8 +26,11 @@
         rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="<?= base_url();?>assets/css/style.css" rel="stylesheet" />
+    <!-- <link href="<?=base_url()?>assets/css/blog.css" rel="stylesheet"> -->
     <!-- responsive style -->
     <link href="<?= base_url();?>assets/css/responsive.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <!-- Custom styles for this template -->
 </head>
 
 <body>
@@ -40,7 +43,7 @@
                     <a class="navbar-brand" href="index.html">
                         <img src="images/logo.png" alt="">
                         <span>
-                        <a href="<?= base_url('user'); ?>"> <img src="<?= base_url('assets/images/logo.png')?>"></a>
+                            <a href="<?= base_url('user'); ?>"> <img src="<?= base_url('assets/images/logo.png')?>"></a>
                         </span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -60,19 +63,19 @@
                                     <a class="nav-link" href="<?= base_url('user/harga_emas'); ?>""> Harga Emas</a>
                                 </li>
                                 <li class=" nav-item">
-                                    <a class="nav-link" href="<?= base_url('user/about'); ?>"">About </a>
+                                        <a class="nav-link" href="<?= base_url('user/about'); ?>"">About </a>
                                 </li>
                                 <li class=" nav-item">
-                                    <a class="nav-link" href="<?= base_url('user/outlet'); ?>"">Outlet </a>
+                                            <a class="nav-link" href="<?= base_url('user/outlet'); ?>"">Outlet </a>
                                 </li>
                                 <!-- <li class=" nav-item">
-                                            <a class="nav-link" href="<?= base_url('user/koleksi'); ?>"">Koleksi </a>
+                                                <a class="nav-link" href="<?= base_url('user/koleksi'); ?>"">Koleksi </a>
                                 </li> -->
                                 <li class=" nav-item">
-                                                <a class="nav-link" href="<?= base_url('user/blog'); ?>"">Blog </a>
+                                                    <a class="nav-link" href="<?= base_url('user/blog'); ?>"">Blog </a>
                                 </li>
                                 <li class=" nav-item">
-                                                    <a class="nav-link" href="<?= base_url('user/kontak'); ?>"">Contact us</a>
+                                                        <a class="nav-link" href="<?= base_url('user/kontak'); ?>"">Contact us</a>
                                 </li>
 
                             </ul>
@@ -84,7 +87,7 @@
                             </a>
                             <form class=" form-inline">
 
-                                                        </form>
+                                                            </form>
                         </div>
                     </div>
                 </nav>

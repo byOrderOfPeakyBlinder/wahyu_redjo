@@ -44,7 +44,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url('admin')?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -66,7 +66,7 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Home</a>
+                        <a class="collapse-item" href="<?= base_url('admin')?>">Home</a>
                         <a class="collapse-item" href="<?= base_url('admin/harga_emas')?>">Harga Emas</a>
                         <a class="collapse-item" href="<?= base_url('admin/outlet')?>">Outlet</a>
                         <!-- <a class="collapse-item" href="<?= base_url('admin/koleksi')?>">Koleksi</a> -->

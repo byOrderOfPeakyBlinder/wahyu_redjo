@@ -211,20 +211,54 @@ class Admin extends CI_Controller
   }
   public function blog()
   {
-     
-    
-    $this->load->view('admin/header');
+      $outlet=$this->Admin_model->get_outlet();
+      $array=array(
+        'blog' => $outlet
+      );
+  
+    $this->load->view('admin/header',$array);
     $this->load->view('admin/blog');
     $this->load->view('admin/footer');
   }
-  // public function koleksi()
-  // {
-     
+  public function tambah_blog()
+  {
+    $this->form_validation->set_rules('kota_outlet', 'Kota_outlet', 'required|trim');
+    $this->form_validation->set_rules('alamat_outlet', 'Alamat_outlet', 'required|trim');
+    $this->form_validation->set_rules('notlp_outlet', 'Notlp_outlet', 'required|trim|numeric');
+    if ($this->form_validation->run() == false) {
+      $this->load->view('admin/header');
+      $this->load->view('admin/tambah_blog');
+      $this->load->view('admin/footer');
+
+    }else{
+      $nama=$this->input->post('kota_outlet');
+      $foto = $_FILES['foto'];
+      $metode_pembayaran=$this->input->post('metode_pembayaran');
+      if (count($foto) == 0) {
+      } else {
+        $config['upload_path']          = './assets/images/outlet/';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['file_name'] = $nama;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('foto')) {
+          $foto = '';
+        } else {
+          //jika foto berhasil di upload
+          $foto = $this->upload->data('file_name');
+        }
+      }
+      $insert=array(
+        'kota'=>$this->input->post('kota_outlet'),
+        'alamat'=>$this->input->post('alamat_outlet'),
+        'no_tlp'=>$this->input->post('notlp_outlet'),
+        'foto'=>$foto,
+      );
+      $this->Admin_model->tambah_outlet($insert);
+      $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Tambah');
+      redirect('admin/outlet');
+    }
     
-  //   $this->load->view('admin/header');
-  //   $this->load->view('admin/koleksi');
-  //   $this->load->view('admin/footer');
-  // }
+  }
 
 }
 

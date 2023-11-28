@@ -30,6 +30,12 @@ public function get_outlet()
   $query = $this->db->get('outlet');
   return $query->result();
 }
+public function get_blog()
+{
+  $query = $this->db->get('blog');
+  return $query->result();
+}
+
 }
 
 /* End of file User_model.php */
