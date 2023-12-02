@@ -211,9 +211,9 @@ class Admin extends CI_Controller
   }
   public function blog()
   {
-      $outlet=$this->Admin_model->get_outlet();
+      $blog=$this->Admin_model->get_blog();
       $array=array(
-        'blog' => $outlet
+        'blog' => $blog
       );
   
     $this->load->view('admin/header',$array);
@@ -222,21 +222,20 @@ class Admin extends CI_Controller
   }
   public function tambah_blog()
   {
-    $this->form_validation->set_rules('kota_outlet', 'Kota_outlet', 'required|trim');
-    $this->form_validation->set_rules('alamat_outlet', 'Alamat_outlet', 'required|trim');
-    $this->form_validation->set_rules('notlp_outlet', 'Notlp_outlet', 'required|trim|numeric');
+    $this->form_validation->set_rules('judul', 'judul', 'required|trim');
+    $this->form_validation->set_rules('isi', 'isi', 'required|trim');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/header');
       $this->load->view('admin/tambah_blog');
       $this->load->view('admin/footer');
 
     }else{
-      $nama=$this->input->post('kota_outlet');
+      $nama=$this->input->post('judul');
       $foto = $_FILES['foto'];
       $metode_pembayaran=$this->input->post('metode_pembayaran');
       if (count($foto) == 0) {
       } else {
-        $config['upload_path']          = './assets/images/outlet/';
+        $config['upload_path']          = './assets/images/blog/';
         $config['allowed_types']        = 'jpg|png|jpeg';
         $config['file_name'] = $nama;
         $this->load->library('upload', $config);
@@ -248,18 +247,79 @@ class Admin extends CI_Controller
         }
       }
       $insert=array(
-        'kota'=>$this->input->post('kota_outlet'),
-        'alamat'=>$this->input->post('alamat_outlet'),
-        'no_tlp'=>$this->input->post('notlp_outlet'),
+        'judul'=>$this->input->post('judul'),
+        'isi'=>$this->input->post('isi'),
         'foto'=>$foto,
+        'time'=>time(),
       );
-      $this->Admin_model->tambah_outlet($insert);
+      $this->Admin_model->tambah_blog($insert);
       $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Tambah');
-      redirect('admin/outlet');
+      redirect('admin/blog');
     }
-    
   }
+  public function hapus_blog($id){
+    $hapus = $this->db->get_where('blog', ['id_blog' => $id])->row_array();
+    unlink('assets/images/blog/'.$hapus['foto']); 
+    $this->Admin_model->hapus_blog($id);
+    $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Hapus');
+    redirect('admin/blog');
+  }
+  public function edit_blog($id=null){
+    $edit = $this->db->get_where('blog', ['id_blog' => $id])->row_array();    
+    $nama_file_lm=$this->input->post('foto_lama');
+    $array = array(
+      'edit'=>$edit,
+    );
+    
+    $this->form_validation->set_rules('id_blog', 'id_blog', 'required|trim');
+    $this->form_validation->set_rules('isi', 'isi', 'required|trim');
+    if ($this->form_validation->run() == false) {
+      $this->load->view('admin/header',$array);
+      $this->load->view('admin/edit_blog');
+      $this->load->view('admin/footer');
+    }else{
+      $id=$this->input->post('id_blog');
+      $nama_file_lm=$this->input->post('foto_lama');
+      $file = $_FILES['foto'];
+      if ($file['name'] == '') {
+        $update=array(
+          'judul'=>$this->input->post('judul'),
+          'isi'=>$this->input->post('isi'),
+          'foto'=>$nama_file_lm,
+        'time'=>time(),
 
+        );
+        // $this->session->set_flashdata('msgeror', 'Foto Tidak Dirubah');
+      } else {
+        $nama_file=$this->input->post('judul');
+        $config['upload_path'] = './assets/images/blog/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['file_name'] = $nama_file;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('foto')) {
+          $this->session->set_flashdata('msgeror', 'Gagal Edit Logo Format Image Salah!!!');
+          redirect('Admin/blog');
+        } else {
+          $nama_file = $this->upload->data('file_name');
+          // if ($foto_lm == 'default.jpg') {
+          // } else {
+          //   unlink('./assets/img/profil/' . $foto_lm);
+          // }
+          $update=array(
+            'judul'=>$this->input->post('judul'),
+            'isi'=>$this->input->post('isi'),
+            'foto'=>$nama_file,
+        'time'=>time(),
+
+
+          ); 
+          $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Edit');
+        } 
+      }
+      $this->Admin_model->edit_blog($id,$update);
+      redirect('admin/blog');
+    }
+  }
 }
 
 

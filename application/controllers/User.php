@@ -51,22 +51,26 @@ class User extends CI_Controller
   // }
   public function blog()
   {
-    $outlet=$this->User_model->get_outlet();
+    $blog=$this->User_model->get_blog();
+    $blog2=$this->User_model->get_blog_2();
+  
     $array=array(
-      'blog' => $outlet
+      'blog' => $blog,
+      'blog_lainnya'=>$blog2
     );
     $this->load->view('user/header',$array);
     $this->load->view('user/blog');
     $this->load->view('user/footer');
   }
-  public function isi_blog()
+  public function isi_blog($id)
   {
-    $outlet=$this->User_model->get_outlet();
+    $show = $this->db->get_where('blog', ['id_blog' => $id])->row_array();    
+
     $array=array(
-      'isi_blog' => $outlet
+      'isi_blog' => $show
     );
     $this->load->view('user/header',$array);
-    $this->load->view('user/isi_blog');
+    $this->load->view('user/isi');
     $this->load->view('user/footer');
   }
   public function kontak()

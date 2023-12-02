@@ -68,6 +68,29 @@ function hapus_outlet($id)
   $this->db->where('id_outlet', $id);
   $this->db->delete('outlet');
 }
+// sdasdasdsasadasdsadsadsadsdasdasdsaasa
+
+public function get_blog()
+{
+  $query = $this->db->get('blog');
+  return $query->result();
+}
+public function tambah_blog($data)
+{
+  $this->db->insert('blog',$data);
+}
+function edit_blog($id, $Data)
+{
+  $this->db->set($Data);
+  $this->db->where('id_blog', $id);
+  $this->db->update('blog');
+  return $this->db->affected_rows();
+}
+function hapus_blog($id)
+{
+  $this->db->where('id_blog', $id);
+  $this->db->delete('blog');
+}
 public function cek_riwayat($tgl,$bln,$thn)
 {
   
@@ -77,8 +100,6 @@ public function cek_riwayat($tgl,$bln,$thn)
   $query = $this->db->get('riwayat_harga_emas');
   return $query->row_array();
 }
-  // ------------------------------------------------------------------------
-
 }
 
 /* End of file Admin_model.php */

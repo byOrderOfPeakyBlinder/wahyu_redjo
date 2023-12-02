@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col">
                         <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                            Tambah Blog
+                            Edit Blog
                         </h4>
                     </div>
                     <div class="col-auto">
@@ -21,19 +21,21 @@
                 </div>
             </div>
             <div class="card-body">
-                <?php echo form_open_multipart('Admin/tambah_blog'); ?>
+                <?php echo form_open_multipart('Admin/edit_blog'); ?>
                 <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="judul">Judul</label>
                     <div class="col-md-9">
-                        <input value="<?= set_value('judul'); ?>" name="judul" id="judul" type="text"
-                            class="form-control" placeholder="Judul ...">
+                        <input type="text" value="<?= $edit['id_blog'] ?>" name="id_blog" hidden>
+                        <input type="text" value="<?= $edit['foto'] ?>" name="foto_lama" hidden>
+                        <input value="<?= $edit['judul'] ?>" name="judul" id="judul" type="text" class="form-control"
+                            placeholder="Judul...">
                         <?= form_error('judul', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="isi">Isi</label>
                     <div class="col-md-9">
-                        <input value="<?= set_value('isi'); ?>" name="isi" id="isi" type="text" class="form-control"
+                        <input value="<?= $edit['isi']?>" name="isi" id="isi" type="text" class="form-control"
                             placeholder="Isi...">
                         <?= form_error('isi', '<small class="text-danger">', '</small>'); ?>
                     </div>
@@ -41,13 +43,13 @@
                 <div class="row form-group">
                     <label class="col-md-3 text-md-right" for="foto">Thumbnail</label>
                     <div class="col-md-9">
-                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="foto" required>
+                        <input type="file" accept="image/png, image/jpeg, image/jpg" name="foto">
                         <?= form_error('foto', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
-                        <button type="submit" class="btn btn-primary">Tambah Data</button>
+                        <button type="submit" class="btn btn-primary">Edit Data</button>
 
                     </div>
                 </div>

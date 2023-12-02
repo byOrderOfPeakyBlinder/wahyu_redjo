@@ -32,10 +32,22 @@ public function get_outlet()
 }
 public function get_blog()
 {
+  $this->db->order_by('id_blog', 'DESC');
   $query = $this->db->get('blog');
   return $query->result();
 }
-
+public function get_blog_2()
+{
+  $this->db->order_by('id_blog', 'DESC');
+  $query = $this->db->get('blog');
+  return $query->result_array();
+}
+public function get_isi_blog()
+{
+  $this->db->order_by('id_blog', 'DESC');
+  $query = $this->db->get('isi_blog');
+  return $query->result();
+}
 }
 
 /* End of file User_model.php */

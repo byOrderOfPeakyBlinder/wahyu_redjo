@@ -27,31 +27,29 @@
                     <thead>
                         <tr>
                             <th>No. </th>
-                            <th>Kota Outlet</th>
-                            <th>Alamat Outlet</th>
-                            <th>Nomor Handphone</th>
-                            <th>Foto Outlet</th>
+                            <th>Judul</th>
+                            <th>Isi</th>
+                            <th>Thumbnail</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                 $no = 1;
-                if ($outlet) :
-                    foreach ($outlet as $otl) : ?>
+                if ($blog) :
+                    foreach ($blog as $blg) : ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $otl->kota ?></td>
-                            <td><?php echo $otl->alamat ?></td>
-                            <td>+62 <?php echo $otl->no_tlp ?></td>
-                            <td> <img height="100px" src="<?= base_url('assets/images/outlet/').$otl->foto?>" alt="">
+                            <td><?php echo $blg->judul ?></td>
+                            <td><?php echo $blg->isi ?></td>
+                            <td> <img height="100px" src="<?= base_url('assets/images/blog/').$blg->foto?>" alt="">
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/edit_outlet//').$otl->id_outlet ?>"
+                                <a href="<?= base_url('admin/edit_blog//').$blg->id_blog ?>"
                                     class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
 
                                 <a onclick="return confirm('Yakin ingin hapus?')"
-                                    href="<?= base_url('admin/hapus_outlet//').$otl->id_outlet ?>"
+                                    href="<?= base_url('admin/hapus_blog//').$blg->id_blog ?>"
                                     class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
