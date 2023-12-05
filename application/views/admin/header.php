@@ -20,23 +20,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Custom styles for this template-->
     <link href="<?= base_url(''); ?>assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        <!--Notif-->
+        <div class="er-data" data-erdata="<?php echo $this->session->flashdata('msgeror'); ?>"></div>
+        <div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('msg'); ?>"></div>
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3"> Wahyu Redjo </div>
+                <img src="<?= base_url();?>assets/images/wr1.png" height="50">
             </a>
 
             <!-- Divider -->
@@ -69,6 +69,7 @@
                         <a class="collapse-item" href="<?= base_url('admin')?>">Home</a>
                         <a class="collapse-item" href="<?= base_url('admin/harga_emas')?>">Harga Emas</a>
                         <a class="collapse-item" href="<?= base_url('admin/outlet')?>">Outlet</a>
+                        <a class="collapse-item" href="<?= base_url('admin/cabang')?>">Cabang</a>
                         <!-- <a class="collapse-item" href="<?= base_url('admin/koleksi')?>">Koleksi</a> -->
                         <a class="collapse-item" href="<?= base_url('admin/blog')?>">Blog</a>
                         <!-- <a class="collapse-item" href="<?= base_url('admin/kontak')?>">Informasi Kontak</a> -->

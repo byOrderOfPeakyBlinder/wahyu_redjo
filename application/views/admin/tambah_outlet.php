@@ -23,7 +23,7 @@
             <div class="card-body">
                 <?php echo form_open_multipart('Admin/tambah_outlet'); ?>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="kotaoutlet">Kota Outlet</label>
+                    <label class="col-md-3 text-md-right" for="kotaoutlet">Kota</label>
                     <div class="col-md-9">
                         <input value="<?= set_value('kota_outlet'); ?>" name="kota_outlet" id="kota_outlet" type="text"
                             class="form-control" placeholder="Kota Outlet...">
@@ -31,27 +31,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="alamat_outlet">Alamat Outlet</label>
-                    <div class="col-md-9">
-                        <input value="<?= set_value('alamat_outlet'); ?>" name="alamat_outlet" id="alamat_outlet"
-                            type="text" class="form-control" placeholder="Alamat Outlet...">
-                        <?= form_error('alamat_outlet', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nohp_outlet">Nomor Telepon Outlet</label>
-                    <div class="col-sm-2">
-                        <input type="text" class="form-control" value="   +62" disabled>
-                    </div>
-                    <div class="col-md-7">
-                        <input value="<?= set_value('notlp_outlet'); ?>" name="notlp_outlet" id="nohp_outlet"
-                            type="text" class="form-control" placeholder="82112341234" data-toggle="tooltip"
-                            data-placement="top" title="Masukan Tanpa 0/62">
-                        <?= form_error('notlp_outlet', '<small class="text-danger">', '</small>'); ?>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="logo">Foto Outlet</label>
+                    <label class="col-md-3 text-md-right" for="logo">Foto</label>
                     <div class="col-md-9">
                         <input type="file" accept="image/png, image/jpeg, image/jpg" name="foto" required>
                         <?= form_error('foto', '<small class="text-danger">', '</small>'); ?>

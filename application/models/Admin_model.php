@@ -69,7 +69,28 @@ function hapus_outlet($id)
   $this->db->delete('outlet');
 }
 // sdasdasdsasadasdsadsadsadsdasdasdsaasa
-
+public function get_cabang()
+{
+  $query = $this->db->get('cabang');
+  return $query->result();
+}
+public function tambah_cabang($data)
+{
+  $this->db->insert('cabang',$data);
+}
+function edit_cabang($id, $Data)
+{
+  $this->db->set($Data);
+  $this->db->where('id_cabang', $id);
+  $this->db->update('cabang');
+  return $this->db->affected_rows();
+}
+function hapus_cabang($id)
+{
+  $this->db->where('id_cabang', $id);
+  $this->db->delete('cabang');
+}
+// sadksakdsadsadsadsadsadsa
 public function get_blog()
 {
   $query = $this->db->get('blog');
@@ -100,6 +121,17 @@ public function cek_riwayat($tgl,$bln,$thn)
   $query = $this->db->get('riwayat_harga_emas');
   return $query->row_array();
 }
+public function get_kategori()
+{
+  $query = $this->db->get('kategori');
+  return $query->result();
+}
+// public function $jumlah_outlet()
+// {
+//   $this->db->where('outlet',$otl);
+//   $query = $this->db->get('outlet');
+//   return $query->num_rows();
+// }
 }
 
 /* End of file Admin_model.php */

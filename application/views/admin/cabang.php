@@ -6,16 +6,16 @@
             <div class="row">
                 <div class="col">
                     <h4 class="h5 align-middle m-0 font-weight-bold text-primary">
-                        DATA MASTER BLOG
+                        DATA MASTER CABANG
                     </h4>
                 </div>
                 <div class="col-auto">
-                    <a href="<?= base_url('admin/tambah_blog') ?>" class="btn btn-sm btn-primary btn-icon-split">
+                    <a href="<?= base_url('admin/tambah_cabang') ?>" class="btn btn-sm btn-primary btn-icon-split">
                         <span class="icon">
                             <i class="fa fa-plus"></i>
                         </span>
                         <span class="text">
-                            Tambah Blog
+                            Tambah Cabang
                         </span>
                     </a>
                 </div>
@@ -27,31 +27,28 @@
                     <thead>
                         <tr>
                             <th>No. </th>
-                            <th>Judul</th>
-                            <th>Isi</th>
-                            <th>Thumbnail</th>
-                            <th>Kategori</th>
+                            <th>Wilayah</th>
+                            <th>Nama Toko</th>
+                            <th>Alamat</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                 $no = 1;
-                if ($blog) :
-                    foreach ($blog as $blg) : ?>
+                if ($cabang) :
+                    foreach ($cabang as $cbg) : ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $blg->judul ?></td>
-                            <td><?php echo $blg->isi ?></td>
-                            <td> <img height="100px" src="<?= base_url('assets/images/blog/').$blg->foto?>" alt="">
-                            </td>
-                            <td><?php echo $blg->kategori ?></td>
+                            <td><?php echo $cbg->id_outlet ?></td>
+                            <td><?php echo $cbg->nama_toko ?></td>
+                            <td><?php echo $cbg->alamat ?></td>
                             <td>
-                                <a href="<?= base_url('admin/edit_blog//').$blg->id_blog ?>"
+                                <a href="<?= base_url('admin/edit_cabang//').$cbg->id_cabang?>"
                                     class="btn btn-warning btn-circle btn-sm"><i class="fa fa-edit"></i></a>
 
                                 <a onclick="return confirm('Yakin ingin hapus?')"
-                                    href="<?= base_url('admin/hapus_blog//').$blg->id_blog ?>"
+                                    href="<?= base_url('admin/hapus_cabang//').$cbg->id_cabang ?>"
                                     class="btn btn-danger btn-circle btn-sm"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

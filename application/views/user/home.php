@@ -1,124 +1,47 @@
     <!-- slider section -->
     <section class=" slider_section position-relative">
-        <div class="design-box">
-            <img src="<?= base_url();?>assets/images/design-1.png" alt="">
-        </div>
-        <div class="slider_number-container d-none d-md-block">
-            <div class="number-box">
-                <span>
-                    01
-                </span>
-                <hr>
-                <span class="jwel">
-                    J <br>
-                    e <br>
-                    w <br>
-                    e <br>
-                    l <br>
-                    l <br>
-                    e <br>
-                    r <br>
-                    y
-                </span>
-                <hr>
-                <span>
-                    02
-                </span>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-        </div>
-        <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="detail_box">
-                                    <h2>
-                                        <span> Koleksi Terbaru</span>
-                                        <hr>
-                                    </h2>
-                                    <h1>
-                                        Jewellery
-                                    </h1>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia
-                                        aptent taciti sociosqu ad litora torquent per conubia nostra
-                                    </p>
-                                    <div>
-                                    <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="img-box">
-                                    <img src="<?= base_url();?>assets/images/slider-img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="detail_box">
-                                    <h2>
-                                        <span> New Collection</span>
-                                        <hr>
-                                    </h2>
-                                    <h1>
-                                        Jewellery
-                                    </h1>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia
-                                        aptent taciti sociosqu ad litora torquent per conubia nostra
-                                    </p>
-                                    <div>
-                                    <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="img-box">
-                                    <img src="<?= base_url();?>assets/images/slider-img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item ">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="detail_box">
-                                    <h2>
-                                        <span> New Collection</span>
-                                        <hr>
-                                    </h2>
-                                    <h1>
-                                        Jewellery
-                                    </h1>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consec tetur adipiscing elit elit at felislacinia
-                                        aptent taciti sociosqu ad litora torquent per conubia nostra
-                                    </p>
-                                    <div>
-                                    <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="img-box">
-                                    <img src="<?= base_url();?>assets/images/slider-img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="carousel-inner  ">
+                <div class="carousel-item active ">
+                    <img src="<?= base_url();?>assets/images/banner.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url();?>assets/images/default-img.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url();?>assets/images/banner.png" class="d-block w-100" alt="...">
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+        </script>
     </section>
     <!-- end slider section -->
     </div>
@@ -217,7 +140,7 @@
                 </div>
             </div>
         </div>
-    </section> --> 
+    </section> -->
 
     <!-- end about section -->
 
@@ -244,7 +167,8 @@
                         <h5>
                             $<span>1000.00</span>
                         </h5>
-                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
+                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli
+                            Sekarang</a>
                     </div>
                 </div>
                 <div class="box">
@@ -260,7 +184,8 @@
                         <h5>
                             $<span>1000.00</span>
                         </h5>
-                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
+                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli
+                            Sekarang</a>
                     </div>
                 </div>
                 <div class="box">
@@ -276,7 +201,8 @@
                         <h5>
                             $<span>1000.00</span>
                         </h5>
-                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
+                        <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli
+                            Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -293,7 +219,7 @@
 
     <section class="ring_section layout_padding">
         <div class="design-box">
-            <img src="<?= base_url();?>assets/images/design-1.png" alt="">
+            <!-- <img src="<?= base_url();?>assets/images/design-1.png" alt=""> -->
         </div>
         <div class="container">
             <div class="ring_container layout_padding2">
@@ -306,7 +232,8 @@
                             <h2>
                                 Wedding Ring
                             </h2>
-                            <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli Sekarang</a>
+                            <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">Beli
+                                Sekarang</a>
                         </div>
                     </div>
                     <div class="col-md-7">
@@ -427,7 +354,7 @@
 
     <section class="contact_section layout_padding">
         <div class="design-box">
-            <img src="<?= base_url();?>assets/images/design-2.png" alt="">
+            <!-- <img src="<?= base_url();?>assets/images/design-2.png" alt=""> -->
         </div>
         <div class="container ">
             <div class="">
@@ -463,7 +390,10 @@
                 <div class="col-md-6">
                     <div class="map_container">
                         <div class="map-responsive">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8414704211896!2d112.66491307576639!3d-7.258876292747822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ffc811220441%3A0xca3821b5e632de25!2sTOKO%20MAS%20WAHYU%20REDJO%20MANUKAN!5e0!3m2!1sid!2sid!4v1700542613524!5m2!1sid!2sid" width="600" height="300" style="border:0;" width: 100%; height:100% allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8414704211896!2d112.66491307576639!3d-7.258876292747822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ffc811220441%3A0xca3821b5e632de25!2sTOKO%20MAS%20WAHYU%20REDJO%20MANUKAN!5e0!3m2!1sid!2sid!4v1700542613524!5m2!1sid!2sid"
+                                width="600" height="300" style="border:0;" width: 100%; height:100% allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                         </div>
                     </div>

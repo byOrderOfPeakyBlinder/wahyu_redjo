@@ -1,14 +1,12 @@
  <!-- info section -->
- <section class="info_section ">
+ <section class="info_section" style="background:#9932CC;">
      <div class="container">
          <div class="info_container">
              <div class="row">
                  <div class="col-md-3">
-                     <div class="info_logo">
+                     <div class="info_contact">
                          <a href="">
-                             <img src="<?= base_url();?>assets/images/logo.png" alt="">
-                             <span>
-                                 Wahyu Redjo
+                             <img src="<?= base_url();?>assets/images/wr1.png" width="250">
                              </span>
                          </a>
                      </div>
@@ -18,19 +16,22 @@
                          <a href="">
                              <img src="<?= base_url();?>assets/images/location.png" alt="">
                              <span>
-                                <a href ="https://maps.app.goo.gl/mNPfwZHZLxLwWv8w5" >
-                                     Jl. Manukan Tama Blok IG No.35, Manukan Kulon, Timur, Jawa, Kec. Tandes, Surabaya, Jawa
-                                 Timur 60185 </a>
+                                 <a href="https://maps.app.goo.gl/mNPfwZHZLxLwWv8w5">
+                                     Jl. Manukan Tama Blok IG No.35, Manukan Kulon, Timur, Jawa, Kec. Tandes, Surabaya,
+                                     Jawa
+                                     Timur 60185 </a>
                              </span>
                          </a>
                      </div>
                  </div>
+
                  <div class="col-md-3">
                      <div class="info_contact">
                          <a href="">
                              <img src="<?= base_url();?>assets/images/phone.png" alt="">
                              <span>
-                             <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo"> +62 882-2336-3333
+                                 <a href="https://api.whatsapp.com/send?phone=6281937608593&text=Halo%20Wahyu%20Redjo">
+                                     +62 882-2336-3333
                              </span>
                          </a>
                      </div>
@@ -71,12 +72,13 @@
                      </h5>
                  </div>
                  <div class="social_box">
-                <a href="https://www.facebook.com/tokomaswahyuredjo.online?mibextid=9R9pXO">
-                    <img src="<?= base_url();?>assets/images/fb.png" alt="">
-                </a>
-                <a href="https://www.instagram.com/tokomaswahyuredjo.id/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">
-                    <img src="<?= base_url();?>assets/images/insta.png" alt="">
-                </a>
+                     <a href="https://www.facebook.com/tokomaswahyuredjo.online?mibextid=9R9pXO">
+                         <img src="<?= base_url();?>assets/images/fb.png" alt="">
+                     </a>
+                     <a
+                         href="https://www.instagram.com/tokomaswahyuredjo.id/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==">
+                         <img src="<?= base_url();?>assets/images/insta.png" alt="">
+                     </a>
                  </div>
              </div>
          </div>

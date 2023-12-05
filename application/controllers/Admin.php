@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-//untuk Login Sahaja
 
 class Admin extends CI_Controller
 {
@@ -16,9 +15,17 @@ class Admin extends CI_Controller
 
   public function index()
   {
+    // $jumlah_outlet=$this->Admin_model->jumlah_outlet();
+    // $array = array(
+    //   'title'=>"Dashboard",
+    //   'info'=>$sesi['user'],
+    //   'jumlah_outlet'=>$jumlah_outlet,
+    //   'notif'=>$this->_notifikasi()
+    // );
     $this->load->view('admin/header');
     $this->load->view('admin/dashboard');
     $this->load->view('admin/footer');
+    
 
   }
   public function harga_emas()
@@ -88,7 +95,7 @@ class Admin extends CI_Controller
         $this->Admin_model->edit_riwayat_harga($id,$riwayat);
      }
       $this->Admin_model->edit_harga($id,$update);
-      $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Tambah');
+      $this->session->set_flashdata('msg', 'Harga Emas Berhasil Diperbarui');
       redirect('admin/harga_emas');
   
   }
@@ -106,8 +113,6 @@ class Admin extends CI_Controller
   public function tambah_outlet()
   {
     $this->form_validation->set_rules('kota_outlet', 'Kota_outlet', 'required|trim');
-    $this->form_validation->set_rules('alamat_outlet', 'Alamat_outlet', 'required|trim');
-    $this->form_validation->set_rules('notlp_outlet', 'Notlp_outlet', 'required|trim|numeric');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/header');
       $this->load->view('admin/tambah_outlet');
@@ -116,7 +121,6 @@ class Admin extends CI_Controller
     }else{
       $nama=$this->input->post('kota_outlet');
       $foto = $_FILES['foto'];
-      $metode_pembayaran=$this->input->post('metode_pembayaran');
       if (count($foto) == 0) {
       } else {
         $config['upload_path']          = './assets/images/outlet/';
@@ -132,12 +136,10 @@ class Admin extends CI_Controller
       }
       $insert=array(
         'kota'=>$this->input->post('kota_outlet'),
-        'alamat'=>$this->input->post('alamat_outlet'),
-        'no_tlp'=>$this->input->post('notlp_outlet'),
         'foto'=>$foto,
       );
       $this->Admin_model->tambah_outlet($insert);
-      $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Tambah');
+      $this->session->set_flashdata('msg', 'Outlet Berhasil Ditambahkan');
       redirect('admin/outlet');
     }
     
@@ -149,7 +151,6 @@ class Admin extends CI_Controller
     );
     
     $this->form_validation->set_rules('id_outlet', 'Id_outlet', 'required|trim');
-    $this->form_validation->set_rules('notlp_outlet', 'Notlp_outlet', 'required|trim|numeric');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/header',$array);
       $this->load->view('admin/edit_outlet');
@@ -161,11 +162,9 @@ class Admin extends CI_Controller
       if ($file['name'] == '') {
         $update=array(
           'kota'=>$this->input->post('kota_outlet'),
-          'alamat'=>$this->input->post('alamat_outlet'),
-          'no_tlp'=>$this->input->post('notlp_outlet'),
           'foto'=>$nama_file_lm,
         );
-        // $this->session->set_flashdata('msgeror', 'Foto Tidak Dirubah');
+        $this->session->set_flashdata('msg', 'Outlet Berhasil di Perbarui');
       } else {
         $nama_file=$this->input->post('kota_outlet');
         $config['upload_path'] = './assets/images/oulet/';
@@ -177,17 +176,11 @@ class Admin extends CI_Controller
           redirect('Admin/outlet');
         } else {
           $nama_file = $this->upload->data('file_name');
-          // if ($foto_lm == 'default.jpg') {
-          // } else {
-          //   unlink('./assets/img/profil/' . $foto_lm);
-          // }
           $update=array(
             'kota'=>$this->input->post('kota_outlet'),
-            'alamat'=>$this->input->post('alamat_outlet'),
-            'no_tlp'=>$this->input->post('notlp_outlet'),
             'foto'=>$nama_file,
           ); 
-          $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Edit');
+          $this->session->set_flashdata('msg', 'Outlet Berhasil di Perbarui');
         } 
       }
       $this->Admin_model->edit_outlet($id,$update);
@@ -198,7 +191,7 @@ class Admin extends CI_Controller
     $hapus = $this->db->get_where('outlet', ['id_outlet' => $id])->row_array();
     unlink('assets/images/oulet/'.$hapus['foto']); 
     $this->Admin_model->hapus_outlet($id);
-    $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Hapus');
+    $this->session->set_flashdata('msg', 'Outlet Berhasil Di Hapus');
     redirect('admin/outlet');
   }
   public function about()
@@ -224,6 +217,7 @@ class Admin extends CI_Controller
   {
     $this->form_validation->set_rules('judul', 'judul', 'required|trim');
     $this->form_validation->set_rules('isi', 'isi', 'required|trim');
+    $this->form_validation->set_rules('kategori', 'kategori', 'required|trim');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/header');
       $this->load->view('admin/tambah_blog');
@@ -248,8 +242,9 @@ class Admin extends CI_Controller
       }
       $insert=array(
         'judul'=>$this->input->post('judul'),
-        'isi'=>$this->input->post('isi'),
+        'isi'=>$this->input->post('isi'),      
         'foto'=>$foto,
+        'kategori'=>$this->input->post('kategori'),
         'time'=>time(),
       );
       $this->Admin_model->tambah_blog($insert);
@@ -270,9 +265,9 @@ class Admin extends CI_Controller
     $array = array(
       'edit'=>$edit,
     );
-    
     $this->form_validation->set_rules('id_blog', 'id_blog', 'required|trim');
     $this->form_validation->set_rules('isi', 'isi', 'required|trim');
+    $this->form_validation->set_rules('kategori', 'kategori', 'required|trim');
     if ($this->form_validation->run() == false) {
       $this->load->view('admin/header',$array);
       $this->load->view('admin/edit_blog');
@@ -286,10 +281,10 @@ class Admin extends CI_Controller
           'judul'=>$this->input->post('judul'),
           'isi'=>$this->input->post('isi'),
           'foto'=>$nama_file_lm,
+          'kategori'=>$this->input->post('kategori'),
         'time'=>time(),
-
         );
-        // $this->session->set_flashdata('msgeror', 'Foto Tidak Dirubah');
+        $this->session->set_flashdata('msg', 'Edit Berhasil <br> Foto Tidak Dirubah');
       } else {
         $nama_file=$this->input->post('judul');
         $config['upload_path'] = './assets/images/blog/';
@@ -301,28 +296,62 @@ class Admin extends CI_Controller
           redirect('Admin/blog');
         } else {
           $nama_file = $this->upload->data('file_name');
-          // if ($foto_lm == 'default.jpg') {
-          // } else {
-          //   unlink('./assets/img/profil/' . $foto_lm);
-          // }
+          if ($foto_lm == 'default.jpg') {
+          } else {
+            unlink('./assets/img/profil/' . $foto_lm);
+          }
           $update=array(
             'judul'=>$this->input->post('judul'),
             'isi'=>$this->input->post('isi'),
             'foto'=>$nama_file,
+            'kategori'=>$this->input->post('kategori'),
         'time'=>time(),
-
-
           ); 
-          $this->session->set_flashdata('msg', 'Data Rekening Berhasil Di Edit');
+          $this->session->set_flashdata('msg', 'Data Berhasil Di Edit!!');
         } 
       }
       $this->Admin_model->edit_blog($id,$update);
       redirect('admin/blog');
     }
   }
+
+  // CABANG
+
+  public function cabang()
+  {
+      $cabang=$this->Admin_model->get_cabang();
+      $array=array(
+        'cabang' => $cabang
+      );
+  
+    $this->load->view('admin/header',$array);
+    $this->load->view('admin/cabang');
+    $this->load->view('admin/footer');
+  }
+  public function tambah_cabang()
+  {
+    $this->form_validation->set_rules('id_outlet', 'id_outlet', 'required|trim');
+    $this->form_validation->set_rules('nama_toko', 'nama_toko', 'required|trim');
+    $this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+    if ($this->form_validation->run() == false) {
+      $this->load->view('admin/header');
+      $this->load->view('admin/tambah_cabang');
+      $this->load->view('admin/footer');
+    }else{
+      $nama=$this->input->post('nama_toko');
+      $foto = $_FILES['foto'];
+      if (count($foto) == 0) 
+      $insert=array(
+        'id_outlet'=>$this->input->post('id_outlet'),
+        'nama_toko'=>$this->input->post('nama_toko'),
+        'alamat'=>$this->input->post('alamat'),
+      );
+      $this->Admin_model->tambah_cabang($insert);
+      $this->session->set_flashdata('msg', 'Cabang Berhasil Ditambahkan');
+      redirect('admin/cabang');
+    }
+    
+  }
 }
-
-
-
 /* End of file Admin.php */
 /* Location: ./application/controllers/Admin.php */

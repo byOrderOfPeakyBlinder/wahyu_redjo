@@ -4,15 +4,25 @@
     </div>
     <div class="container">
         <div class="row">
-            <?php foreach ($outlet as $otl) : ?>
+            <b>
+                <h1 style="font-family:arial;" class="posttitle"><?=$outlet['kota']?></h1>
+            </b>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php foreach ($cabang as $cbg) : ?>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="<?= base_url('assets/images/outlet/').$otl->foto?>" class="card-img-top">
                     <div class="card-body">
                         <center>
                             <h5>
-                                <a href="<?= base_url('user/cabang'); ?>" style="color:black;"
-                                    class="card-title"><?= $otl->kota?>
+                                <a href="cabang.php" style="color:black;" class="card-title"><?= $cbg->nama_toko?>
+                            </h5>
+                        </center>
+                        <center>
+                            <h5>
+                                <a href="" style="color:black;" class="card-title"><?= $cbg->alamat?>
                             </h5>
                         </center>
                     </div>

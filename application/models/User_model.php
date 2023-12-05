@@ -30,6 +30,12 @@ public function get_outlet()
   $query = $this->db->get('outlet');
   return $query->result();
 }
+public function get_cabang()
+{
+  $this->db->order_by('id_cabang', 'DESC');
+  $query = $this->db->get('cabang');
+  return $query->result();
+}
 public function get_blog()
 {
   $this->db->order_by('id_blog', 'DESC');

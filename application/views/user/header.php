@@ -37,13 +37,14 @@
 
     <div class="hero_area">
         <!-- header section strats -->
-        <header class="header_section">
+        <header class="header_section position-fixed" style="background:#FDDC66; width:100%;  z-index:9999;">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container ">
                     <a class="navbar-brand" href="index.html">
                         <img src="images/logo.png" alt="">
                         <span>
-                            <a href="<?= base_url('user'); ?>"> <img src="<?= base_url('assets/images/logo.png')?>"></a>
+                            <a href="<?= base_url('user'); ?>"> <img src="<?= base_url();?>assets/images/wr1.png"
+                                    height="70"></a>
                         </span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -77,17 +78,7 @@
                                 <li class=" nav-item">
                                                         <a class="nav-link" href="<?= base_url('user/kontak'); ?>"">Contact us</a>
                                 </li>
-
                             </ul>
-
-                        </div>
-                        <div class=" quote_btn-container ">
-                            <a href="">
-
-                            </a>
-                            <form class=" form-inline">
-
-                                                            </form>
                         </div>
                     </div>
                 </nav>

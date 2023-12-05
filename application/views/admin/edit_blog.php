@@ -48,6 +48,18 @@
                     </div>
                 </div>
                 <div class="row form-group">
+                    <label class="col-md-3 text-md-right" for="kategori">Kategori</label>
+                    <div class="col-md-9">
+                        <select class="form-control form-control-user" name="kategori">
+                            <option value="events">Events</option>
+                            <option value="promo">Promo</option>
+                            <option value="emas">Emas</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="tips">Tips</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
                     <div class="col-md-9 offset-md-3">
                         <button type="submit" class="btn btn-primary">Edit Data</button>
 

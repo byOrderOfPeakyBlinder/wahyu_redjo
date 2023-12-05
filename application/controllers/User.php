@@ -27,6 +27,7 @@ class User extends CI_Controller
     $this->load->view('user/harga_emas');
     $this->load->view('user/footer');
   }
+
   public function outlet()
   {
     $outlet=$this->User_model->get_outlet();
@@ -35,6 +36,16 @@ class User extends CI_Controller
     );
     $this->load->view('user/header',$array);
     $this->load->view('user/outlet');
+    $this->load->view('user/footer');
+  }
+  public function cabang()
+  {
+    $cabang=$this->User_model->get_cabang();
+    $array=array(
+      'cabang' => $cabang
+    );
+    $this->load->view('user/header',$array);
+    $this->load->view('user/cabang');
     $this->load->view('user/footer');
   }
   public function about()
@@ -85,12 +96,12 @@ class User extends CI_Controller
     $this->load->view('user/post');
     $this->load->view('user/footer');
   }
-  public function author()
-  {
-    $this->load->view('user/header');
-    $this->load->view('user/author');
-    $this->load->view('user/footer');
-  }
+  // public function author()
+  // {
+  //   $this->load->view('user/header');
+  //   $this->load->view('user/author');
+  //   $this->load->view('user/footer');
+  // }
 
 }
 

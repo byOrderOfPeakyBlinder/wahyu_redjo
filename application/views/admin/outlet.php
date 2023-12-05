@@ -28,8 +28,6 @@
                         <tr>
                             <th>No. </th>
                             <th>Kota Outlet</th>
-                            <th>Alamat Outlet</th>
-                            <th>Nomor Handphone</th>
                             <th>Foto Outlet</th>
                             <th>Aksi</th>
                         </tr>
@@ -42,8 +40,6 @@
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $otl->kota ?></td>
-                            <td><?php echo $otl->alamat ?></td>
-                            <td>+62 <?php echo $otl->no_tlp ?></td>
                             <td> <img height="100px" src="<?= base_url('assets/images/outlet/').$otl->foto?>" alt="">
                             </td>
                             <td>

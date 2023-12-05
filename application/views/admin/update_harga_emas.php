@@ -22,50 +22,42 @@
             </div>
             <div class="card-body">
                 <form method="post" action="<?= base_url('admin/update_harga_emas')?>">
-
-
-                
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="bank">Harga Beli 6K</label>
-                    <div class="col-md-9">
-                        <input value="<?= $harga['beli_6']; ?>" name="beli_6" id="bank" type="text"
-                        class="form-control" \>
-                        <?= form_error('harga_beli', '<small class="text-danger">', '</small>'); ?>
+                    <div class="row form-group">
+                        <label class="col-md-3 text-md-right" for="bank">Harga Beli 6K</label>
+                        <div class="col-md-9">
+                            <input value="<?= $harga['beli_6']; ?>" name="beli_6" id="bank" type="text"
+                                class="form-control" \>
+                            <?= form_error('harga_beli', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_rekening">Harga Jual 6K</label>
-                    <div class="col-md-9">
-                        <input value="<?= $harga['id']; ?>" name="id" id="nama_rekening" type="text"
-                            class="form-control" hidden>
-                        <input value="<?= $harga['jual_6']; ?>" name="jual_6" id="nama_rekening" type="text"
-                            class="form-control" class="uang">
-                        <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
+                    <div class="row form-group">
+                        <label class="col-md-3 text-md-right" for="nama_rekening">Harga Jual 6K</label>
+                        <div class="col-md-9">
+                            <input value="<?= $harga['id']; ?>" name="id" id="nama_rekening" type="text"
+                                class="form-control" hidden>
+                            <input value="<?= $harga['jual_6']; ?>" name="jual_6" id="nama_rekening" type="text"
+                                class="form-control" class="uang">
+                            <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </div>
-                
-                
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="bank">Harga Beli 8K / 9K</label>
-                    <div class="col-md-9">
-                        <input value="<?= $harga['beli_8']; ?>" name="beli_8" id="bank" type="text"
-                        class="form-control" \>
-                        <?= form_error('harga_beli', '<small class="text-danger">', '</small>'); ?>
+                    <div class="row form-group">
+                        <label class="col-md-3 text-md-right" for="bank">Harga Beli 8K / 9K</label>
+                        <div class="col-md-9">
+                            <input value="<?= $harga['beli_8']; ?>" name="beli_8" id="bank" type="text"
+                                class="form-control" \>
+                            <?= form_error('harga_beli', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </div>
-                <div class="row form-group">
-                    <label class="col-md-3 text-md-right" for="nama_rekening">Harga Jual 8K / 9K</label>
-                    <div class="col-md-9">
-                        <input value="<?= $harga['id']; ?>" name="id" id="nama_rekening" type="text"
-                            class="form-control" hidden>
-                        <input value="<?= $harga['jual_8']; ?>" name="jual_8" id="nama_rekening" type="text"
-                            class="form-control" class="uang">
-                        <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
+                    <div class="row form-group">
+                        <label class="col-md-3 text-md-right" for="nama_rekening">Harga Jual 8K / 9K</label>
+                        <div class="col-md-9">
+                            <input value="<?= $harga['id']; ?>" name="id" id="nama_rekening" type="text"
+                                class="form-control" hidden>
+                            <input value="<?= $harga['jual_8']; ?>" name="jual_8" id="nama_rekening" type="text"
+                                class="form-control" class="uang">
+                            <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
+                        </div>
                     </div>
-                </div>
-
-                   
-
                     <div class="row form-group">
                         <label class="col-md-3 text-md-right" for="bank">Harga Beli 16K</label>
                         <div class="col-md-9">
@@ -84,7 +76,6 @@
                             <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
                         </div>
                     </div>
-
                     <div class="row form-group">
                         <label class="col-md-3 text-md-right" for="bank">Harga Beli 17K</label>
                         <div class="col-md-9">
@@ -103,8 +94,6 @@
                             <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
                         </div>
                     </div>
-
-
                     <div class="row form-group">
                         <label class="col-md-3 text-md-right" for="bank">Harga Beli 8K /9K P</label>
                         <div class="col-md-9">
@@ -123,8 +112,6 @@
                             <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
                         </div>
                     </div>
-
-                   
                     <div class="row form-group">
                         <label class="col-md-3 text-md-right" for="bank">Harga Beli 24K / HK</label>
                         <div class="col-md-9">
@@ -143,8 +130,6 @@
                             <?= form_error('harga_jual', '<small class="text-danger">', '</small>'); ?>
                         </div>
                     </div>
-
-
                     <div class="row form-group">
                         <div class="col-md-9 offset-md-3">
                             <button type="submit" class="btn btn-primary">Update Harga</button>
